@@ -20,9 +20,23 @@ class LinkedList:
         return curr
 
     def traverse(self):
-        return []
+        answer = []
+        curr = self.head
+        while curr:
+            answer.append(curr.data)
+            curr = curr.next
+
+        print(answer)
+        return answer
+
+if __name__ == "__main__":
+    llist = LinkedList()
+    llist.head = Node(1)
+    second = Node(2)
+    third = Node(3)
+
+    llist.head.next = second
+    second.next = third
 
 
-# 이 solution 함수는 그대로 두어야 합니다.
-def solution(x):
-    return 0
+    llist.traverse()
