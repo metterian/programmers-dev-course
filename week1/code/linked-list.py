@@ -68,23 +68,27 @@ class LinkedList:
         if pos < 1 or pos > self.nodeCount:
             raise IndexError
 
-        # 삭제 하려는 node가 맨 앞의 것 일때
+        curr = self.getAt(pos)
         if pos == 1:
-            curr = self.head
-            self.head = self.head.next
-        # 삭제하려는 node가 맨 마지막 일 때
+            if self.nodeCount == 1:
+                self.head = None
+                self.tail = None
+                self.nodeCount = 0
+            else:
+                self.head = self.head.next
+                self.nodeCount -= 1
+            return curr.data
+
         else:
-            prev = self.getAt(pos-1)
+            prev = self.getAt(pos - 1)
             if pos == self.nodeCount:
-                curr = prev.next
+                prev.next = None
                 self.tail = prev
-                self.tail.next = None
 
             else:
-                curr = self.getAt(pos)
                 prev.next = curr.next
         self.nodeCount -= 1
-        return curr
+        return curr.data
 
     def concat(self, L) -> None:
         self.tail.next = L.head
@@ -102,4 +106,3 @@ if __name__ == "__main__":
     L.insert(1, a)
     L.insert(2, b)
     L.insert(3, c)
-
