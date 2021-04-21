@@ -68,6 +68,7 @@ class LinkedList:
     def popAfter(self, prev):
         # prev가 마지막 일때
         if prev.next is None:
+            self.nodeCount -= 1
             return None
 
 
@@ -78,35 +79,15 @@ class LinkedList:
             self.tail = prev
 
         prev.next = curr.next
-
+        self.nodeCount -= 1
         return curr.data
 
 
     def popAt(self, pos):
         if pos < 1 or pos > self.nodeCount:
             raise IndexError
-
-        curr = self.getAt(pos)
-        if pos == 1:
-            if self.nodeCount == 1:
-                self.head = None
-                self.tail = None
-                self.nodeCount = 0
-            else:
-                self.head = self.head.next
-                self.nodeCount -= 1
-            return curr.data
-
-        else:
-            prev = self.getAt(pos - 1)
-            if pos == self.nodeCount:
-                prev.next = None
-                self.tail = prev
-
-            else:
-                prev.next = curr.next
-        self.nodeCount -= 1
-        return curr.data
+        prev = self.getAt(pos-1)
+        return self.popAfter(prev)
 
     def concat(self, L) -> None:
         self.tail.next = L.head.next
