@@ -32,6 +32,6 @@ if __name__ == '__main__':
     myQueue.enqueue(1)
     myQueue.enqueue(14)
     myQueue.enqueue(7)
-    print(myQueue)
+
     while not myQueue.isEmpty():
         print(myQueue.dequeue())
