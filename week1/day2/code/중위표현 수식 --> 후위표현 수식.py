@@ -41,16 +41,14 @@ def solution(S):
                     answer.append(opStack.pop())
                 opStack.pop()
         else:
-            if not opStack.isEmpty() and prec[opStack.peek()] >= prec[char]:
+            while not opStack.isEmpty() and prec[opStack.peek()] >= prec[char]:
                 answer.append(opStack.pop())
-                opStack.psuh(char)
-            else:
-                opStack.push(char)
+            opStack.push(char)
 
     while not opStack.isEmpty():
         answer.append(opStack.pop())
     return "".join(answer)
 # solution('A+B*C')
-solution('(A+(B-C))*D')
+solution('A+B*C-D/E')
 
 # %%
