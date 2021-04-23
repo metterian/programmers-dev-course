@@ -5,7 +5,7 @@
 > - 수준(Level)이 낮은 노드를 우선으로 방문
 > - 같은 수준의 노드를 사이에는 부모 노드의 방순 순서에 따라 방문(왼 > 오)
 
-![image-20210422203246621](/Users/seungjun/Library/Application Support/typora-user-images/image-20210422203246621.png)
+![image-20210422203246621](https://tva1.sinaimg.cn/large/008i3skNgy1gptki0tdadj30jn0d30vr.jpg)
 
 순회의 결과: A -> B -> C -> D -> E ... J
 
@@ -13,7 +13,7 @@
 
 ## 넓이 우선 순회 흐름 설계
 
-![img](https://media.vlpt.us/images/inyong_pang/post/1ad37038-79f7-4820-a0d5-4ba4b3329760/image.png)
+![img](https://tva1.sinaimg.cn/large/008i3skNgy1gptki32lnkj30m10aeq3b.jpg)
 
 - 수준이 낮은 노드 부터 방문해서 큐에 enqueue
 

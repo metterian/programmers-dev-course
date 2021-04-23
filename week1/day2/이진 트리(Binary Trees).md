@@ -23,7 +23,7 @@
 - Left Child
 - Right Child
 
-<img src="/Users/seungjun/Library/Application Support/typora-user-images/image-20210422163506337.png" alt="image-20210422163506337" style="zoom:50%;" />
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gptkh4j6u6j30c40cswfy.jpg" alt="image-20210422163506337" style="zoom:50%;" />
 
 이를 코드로 구현 하면 다음과 같다.
 
@@ -57,7 +57,7 @@ class BinaryTree:
 
 > 전체 이진트리의 size() = left subtree의 size() + right subtree의 size() + **1(자기 자신)**
 
-![image-20210422163928405](/Users/seungjun/Library/Application Support/typora-user-images/image-20210422163928405.png)
+![image-20210422163928405](https://tva1.sinaimg.cn/large/008i3skNgy1gptkh7wdaqj30kw0duwid.jpg)
 
 ```python
 class BinaryTree:
@@ -76,7 +76,7 @@ class BinaryTree:
 
 >  $\text{전체 이진트리의 depth()} =  \bold{max}\text{(left subtree의 depth()}, \text{right subtree의 depth()}) + 1$
 
-![image-20210422164856036](/Users/seungjun/Library/Application Support/typora-user-images/image-20210422164856036.png)
+![image-20210422164856036](https://tva1.sinaimg.cn/large/008i3skNgy1gptkh9qb9hj30jw0a9q5a.jpg)
 
 ```python
 class Node:
@@ -130,13 +130,13 @@ class BinaryTree:
 
 자기 자신을 먼저 방문 순회를 말한다.
 
-![image-20210422170120985](/Users/seungjun/Library/Application Support/typora-user-images/image-20210422170120985.png)
+![image-20210422170120985](https://tva1.sinaimg.cn/large/008i3skNgy1gptkhf8e43j30mi0cb0xa.jpg)
 
 ##### 후위 순회 (post-order traversal)
 
 왼쪽, 오른쪽을 방문 하고 마지막에 자신을 방문 순회를 말한다.
 
-![image-20210422170258037](/Users/seungjun/Library/Application Support/typora-user-images/image-20210422170258037.png)
+![image-20210422170258037](https://tva1.sinaimg.cn/large/008i3skNgy1gptkhg7qgxj30op0cuq7l.jpg)
 
 #### BFS(breadth first traveral)
 
