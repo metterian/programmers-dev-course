@@ -1,23 +1,34 @@
-##  연결 리스트(Linked Lists)
+#  연결 리스트(Linked Lists) - 1장
 
 > 선형 배열이 "번호가 붙여진 칸에 원소들을 채워넣는" 방식이라고 한다면, 연결 리스트는 "각 원소들을 줄줄이 엮어서" 관리하는 방식입니다.
 
-#### Node
+
+
+## Table of Contents
+
+[toc]
+
+
+
+
+
+## Node
+
 - Data
 - Link (next)
 
 Node 내의 데이터는 다른 구조로 이루어질 수 있다.
 ex) 문자열, 레코드. 또 다른 연결 리스트 등
 
-### 기본적인 연결 리스트
+## 기본적인 연결 리스트
 
 기본적인 연결 리스트는 **Head**, **Tail**, **number of nodes** 로 구성된다. 
 
 ![image-20210420234742311](https://tva1.sinaimg.cn/large/008i3skNgy1gptkk6bsw3j30z40dxgp2.jpg)
 
-### 자료 구조 정의
+## 자료 구조 정의
 
-#### Node
+### Node
 
 node는 data와 link(next)로 구성된다. 이를 Python 클래스로 구현하면 다음과 같다.
 
@@ -32,7 +43,7 @@ class Node:
 
 <img src="https://tva1.sinaimg.cn/large/008i3skNgy1gptkk89q40j30f70b675l.jpg" alt="image-20210420235129159" style="zoom:40%;" />
 
-#### Linked List
+### Linked List
 
 처음에 연결리스트를 생성할 때 비어있는 연결리스트를 생성하기 위해서 다음과 같이 초기화를 해준다. 
 
@@ -48,18 +59,18 @@ class LinkedList:
 
 <img src="https://tva1.sinaimg.cn/large/008i3skNgy1gptkka4p70j30hj0dzgnx.jpg" alt="image-20210420235345923" style="zoom:50%;" />
 
-### 연산 정의
+## 연산 정의
 
 1. 특정 원소 참조 ($k$ 번째)
 2. 리스트 순회
 3. 길이 얻어내기
 4. 원소 삽입
-5. 원소 사게
+5. 원소 삭제
 6. 두 리스트 합치기
 
 
 
-### 특정 원소 참조
+### 1. 특정 원소 참조
 
 특정 원소를 찾아가는 코드를 구현하면 다음과 같다.
 
@@ -79,15 +90,15 @@ def getAt(self, pos):
 
 
 
-### 원소 탐색
+### 2. 원소 탐색
 
 ```python
 def traverse(self):
-  answer = []
-  curr = self.head
-  while curr:
-    answer.append(curr.data)
-    curr = curr.next
+    answer = []
+    curr = self.head
+    while curr:
+        answer.append(curr.data)
+        curr = curr.next
 
     print(answer)
     return answer
@@ -95,7 +106,7 @@ def traverse(self):
 
 
 
-### Array와 Linked List 비교
+#### Array와 Linked List 비교
 
 |                | 배열        | 연결 리스트      |
 | -------------- | ----------- | ---------------- |
@@ -105,7 +116,7 @@ def traverse(self):
 
 
 
-### 연결 리스트 연산 - 원소의 삽입
+### 3. 원소의 삽입
 
 `def insertAt(self, pos, newNode):` 는 다음과 같이 구현 된다.
 
@@ -161,7 +172,7 @@ def insert(self, pos, newNode) -> bool:
 
 
 
-### 연결리스트 원소 삽입 복잡도
+#### 연결리스트 원소 삽입 복잡도
 
 - 맨 앞에 삽입하는 경우: O(1)
 - 중간에 삽입하는 경우: O(n)
@@ -169,7 +180,7 @@ def insert(self, pos, newNode) -> bool:
 
 
 
-### 연결리스트 연산 - 원소의 삭제
+### 4. 원소의 삭제
 
 - pos가 가리키는 위치의 (1 ≤ pos ≤ nodeCount)
 - node를 삭제하고
@@ -230,7 +241,7 @@ def insert(self, pos, newNode) -> bool:
 
 
 
-### 연결 리스트 원소 삭제 복잡도
+#### 연결 리스트 원소 삭제 복잡도
 
 - 맨 앞에 삽입하는 경우: $O(1)$
 - 중간에 삽입하는 경우: $O(n)$
@@ -238,7 +249,7 @@ def insert(self, pos, newNode) -> bool:
 
 
 
-## 연결 리스트 연산 - 두 리스트의 연결
+### 5. 두 리스트의 연결 연산
 
 ```python
 def concat(self, L):

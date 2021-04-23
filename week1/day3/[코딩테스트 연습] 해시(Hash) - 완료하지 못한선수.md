@@ -47,3 +47,44 @@ def solution(participant, completion):
     return answer
 ```
 
+
+
+
+
+## 추가 설명
+
+### Get()
+
+여기서 사용된 `get()`메소드는 특정한 키의 value를 리턴하는 메소드이다. 
+
+#### 문법
+
+```python
+dictionary.get(keyname, value)
+```
+
+#### Parameter Values
+
+| Parameter | Description                                                  |
+| :-------- | :----------------------------------------------------------- |
+| *keyname* | Required. The keyname of the item you want to return the value from |
+| *value*   | Optional. A value to return if the specified key does not exist. Default value None |
+
+#### Example
+
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+x = car.get("price", 15000)
+
+print(x)
+```
+
+```python
+15000
+```
+
