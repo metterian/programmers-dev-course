@@ -26,7 +26,12 @@ class Node:
             return self
 
     def max(self):
-        pass
+        # 계속해서 왼쪽만 쫒아가면 가장 작은 값을 만나게 된다.
+        if self.right:
+            return self.right.max()
+        # 왼쪽으로 더 이상 갈 수 없므면 자기 자신이 최소값임
+        else:
+            return self
 
     def lookup(self, key, parent=None):
         if key < self.key:
@@ -58,6 +63,14 @@ class Node:
         # self 노드와 같은 것 -> 중복을 존재 하지 않다고 가정
         else:
             raise KeyError
+
+    def remove(self, key):
+        node, parent = self.lookup(key)
+        if node:
+
+            return True
+        else:
+            return False
 
 
 
