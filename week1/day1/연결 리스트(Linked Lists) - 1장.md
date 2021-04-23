@@ -24,7 +24,7 @@ ex) 문자열, 레코드. 또 다른 연결 리스트 등
 
 기본적인 연결 리스트는 **Head**, **Tail**, **number of nodes** 로 구성된다. 
 
-![image-20210420234742311](https://tva1.sinaimg.cn/large/008i3skNgy1gptkk6bsw3j30z40dxgp2.jpg)
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gptkk6bsw3j30z40dxgp2.jpg" alt="image-20210420234742311" width="300" />
 
 ## 자료 구조 정의
 
@@ -41,7 +41,7 @@ class Node:
 
 이를 그림으로 표현 하면 다음과 같다.
 
-<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gptkk89q40j30f70b675l.jpg" alt="image-20210420235129159" style="zoom:40%;" />
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gptkk89q40j30f70b675l.jpg" alt="image-20210420235129159" width="300" />
 
 ### Linked List
 
@@ -207,7 +207,7 @@ def insert(self, pos, newNode) -> bool:
 
 이는 즉, `pos == nodeCount` 인 경우? 를 묻는 말과 같다.
 
-![image-20210421130159437](https://tva1.sinaimg.cn/large/008i3skNgy1gptkkgnjt4j30hg0cedgu.jpg)
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gptkkgnjt4j30hg0cedgu.jpg" alt="image-20210421130159437" width="300" />
 
 이런 경우 한번에 처리 할 수 없다. (prev를 찾을 방법이 없기 때문) 즉, 앞에서 부터 찾아 와야 한다. 이를 코드로 구현 하면 다음과 같다.
 
