@@ -57,7 +57,7 @@ class LinkedList:
 
 이를 그림으로 표현 하면 다음과 같다.
 
-<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gptkka4p70j30hj0dzgnx.jpg" alt="image-20210420235345923" style="zoom: 33%;" />
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gptkka4p70j30hj0dzgnx.jpg" alt="image-20210420235345923" width= "300" />
 
 ## 연산 정의
 
