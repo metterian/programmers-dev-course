@@ -131,7 +131,9 @@ print(answer)
 
 
 
-## 추가 사항
+## 기록 사항
 
 - `enumerate`(*iterable*, *start=0*)
-- dict.add()
+  - `enumerate` 함수에 start인자가 있는지 처음 알았다. start를 쓰지 못해서 어려운적이 많았는데 꼭 기억하고 다음 부터 써야 겠다
+- `dict.add()`, `dict.get()`
+  - dict에 다양한 메소드가 있는 걸 을 배웠다. 보통 리스트를 많이 사용해서 append 메소드만 원소 추가가 가능 한 줄 알 고있었는데 `add()` 로도 가능하고, 추가적으로 get() 메소드를 사용해서 key에 접근할 수 있다. 이때 디폴트 값을 설정 해주면 value가 없을때 디폴트 값을 가져오고 디폴트를 설정 안해주면 None을 반환 한다.
