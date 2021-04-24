@@ -8,16 +8,13 @@ if int(pow(red, 1/2)) == pow(red, 1/2):
 
 
 # %%
-reds = []
-for r in range(1, red+1):
-    if red % r == 0:
-        reds.append(r)
+reds = [r for r in range(1, red+1) if red % r == 0]
 
 for row in reds[:len(reds)//2]:
-    col = (red//row)
+    col = int(red/row)
     if 2*(col+row) + 4 == brown:
         if col >= row:
-            return col+2, row+2
+            print (col+2, row+2)
 
 
 
