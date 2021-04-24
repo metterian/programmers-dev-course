@@ -21,4 +21,6 @@ solution(4)
 def solution(n, computed={1: 1, 2:2}):
     if n not in computed:
         computed[n] = solution(n-1, computed) + solution(n-2, computed)
-    return computed[n]
+    return computed[n] % 1000000007
+solution(9000000)
+# %%

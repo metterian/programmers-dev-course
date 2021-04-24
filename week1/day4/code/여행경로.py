@@ -28,13 +28,35 @@ def solution(tickets):
     for dept, arrive in tickets:
         visited[dept+arrive] = False
 
+    route.append('ICN')
+    for start in sorted(graph["ICN"]):
+        dfs(graph, visited, ['ICN', start])
+        routes.append(route)
+        route = []
 
-    route.append(tickets[0][0])
-    dfs(graph, visited, tickets[0])
-    routes.append(route)
-
-    return route
+    return max(routes, key=len)
 answer  = (solution(tickets))
 answer
 
+# %%
+def solution(tickets):
+    routes = {}
+    for t in tickets:
+        routes[t[0]] = routes.get(t[0], []) + [t[1]]
+    for r in routes:
+        routes[r].sort(reverse=True)
+
+    stack = ["ICN"]
+    path = []
+
+    while len(stack) > 0:
+        top = stack[-1]
+        if top not in routes or len(routes[top]) ==0:
+            path.append(stack.pop())
+        else:
+            stack.append(routes[top][-1])
+            routes[top] = routes[top][:-1]
+    return path[::-1]
+
+solution(tickets)
 # %%
