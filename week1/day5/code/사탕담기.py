@@ -46,3 +46,10 @@ def solution(m, weights):
     return answer
 
 # %%
+from itertools import combinations
+# 더 깔끔한 풀이
+def solution(m, weights):
+    answer = 0
+    for i in range(1, len(weights)):
+        answer += [sum(sol) for sol in combinations(weights, i)].count(m)
+    return answer
