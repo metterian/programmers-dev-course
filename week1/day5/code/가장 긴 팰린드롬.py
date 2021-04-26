@@ -20,22 +20,25 @@ def solution(s):
 # %%
 
 def is_palindrome(s, start, end):
-    for i in range((end - start) // 2 + 1):
-        if s[start + i] != s[end - i]:
+    for i in range((end-start)//2+1):
+        if s[start+i] != s[end-i]:
             return False
-
     return True
 
 
+
 def solution(s):
-    for answer in range(len(s), 0, -1): # 문자열 최대 길이에서 하나씩 줄여나갑니다.
-        start = 0 # 0에서
-        end = answer - 1 # answer 길이까지
-
+    for answer in range(len(s), 0, -1):
+        start, end = 0, answer - 1
         while end < len(s):
-            if is_palindrome(s, start, end): # 팰린드롬인지 확인합니다
-                return answer; # 팰린드롬이면 그대로 리턴
+            if is_palindrome(s, start, end):
+                return answer
             start += 1
-            end += 1 # 한 칸씩 순회합니다.
+            end += 1
+    return 1
 
-    return 1 # 한 글자일 경우 1을 리턴합니다.
+solution(s)
+
+
+
+# %%
