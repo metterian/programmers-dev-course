@@ -3,7 +3,7 @@ N = 5
 number = 12
 
 # %%
-from itertools import *
+from itertools import product
 
 def solution(N, number):
     dp = [set() for _ in range(8+1)]
