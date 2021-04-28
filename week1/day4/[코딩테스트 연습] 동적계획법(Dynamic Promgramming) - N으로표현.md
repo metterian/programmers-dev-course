@@ -131,6 +131,31 @@ print(answer)
 
 
 
+### 더 나은 풀이
+
+`op1`과 `op2`를 구하는데 `itertools`의 `product` 메소드를 사용해서 구현 하였다.
+
+```python
+from itertools import product
+
+def solution(N, number):
+    dp = [set() for _ in range(8+1)]
+
+    for i in range(1, 8+1):
+        dp[i].add(int(str(N)*i))
+        for j in range(1, i):
+            for op1, op2 in product(dp[j], dp[i-j]):
+                dp[i].add(op1+op2)
+                dp[i].add(op1-op2)
+                dp[i].add(op1*op2)
+                if op2 != 0:
+                    dp[i].add(op1//op2)
+        if number in dp[i]:
+            return  (i)
+
+    return -1
+```
+
 ## 기록 사항
 
 - `enumerate`(*iterable*, *start=0*)
