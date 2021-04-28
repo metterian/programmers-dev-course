@@ -36,7 +36,7 @@
 
 *여기서, L은 Lower trianlguar matrix를 의미하고, U: 는 upper trianlgular matrix를 의미한다.*
 
-![image-20210427152817113](../../../../Library/Application Support/typora-user-images/image-20210427152817113.png)
+![image-20210427152817113](https://tva1.sinaimg.cn/large/008i3skNgy1gpylo2yhdwj30oi05bwhh.jpg)
 
 ### LU 분해의 장점
 
