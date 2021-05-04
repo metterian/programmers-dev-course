@@ -212,7 +212,9 @@ C=\frac{1}{6}\left[\begin{array}{ll}
 0.55 & -0.84
 \end{array}\right]
 $$
+위 예제를 살펴보면 W의 행렬은 2개의 열로 구성 되어 있고 각 열은 축소된 차원의 기저를 의미 합니다. 
+$$
+W_1 = \begin{bmatrix} -0.84 \\ -0.55 \end{bmatrix}, \quad W_2 = \begin{bmatrix} 0.55 \\ -0.84 \end{bmatrix}
+$$
 
-
-## 코드
 
