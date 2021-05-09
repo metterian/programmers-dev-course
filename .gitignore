@@ -7,6 +7,9 @@ __pycache__/
 *.so
 .vscode/
 programmers_kdt_II/
+data/
+avocado/
+
 
 # Distribution / packaging
 .Python
