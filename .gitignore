@@ -9,7 +9,8 @@ __pycache__/
 programmers_kdt_II/
 data/
 avocado/
-
+*.csv
+*.zip
 
 # Distribution / packaging
 .Python
