@@ -1,5 +1,3 @@
-
-
 # Flask - REST API
 
 ## API
@@ -19,8 +17,6 @@ Representational State Tranfer의 약자로써, 웹 서버가 요청을 응답�
 ### HTTP URI
 
 HTTP URI는 자원 명시를 위해 사용된다. 어떠한 정보를 요청(Request) 할 때, 대상자 혹은 대상이 있어야 한다. 그 대상자의 Identity를 URI라고 한다. 이 URI에 속하는 것 중에 하나가 우리가 알고 있는 URL 이다. 
-
-
 
 ### HTTP Method
 
@@ -51,7 +47,7 @@ REST API의 또 다른 특징 중에 하나는 바로 "Stateless"이다. 이 말
 
 
 
-#### 예시 
+#### 예시
 
 가령,  다음의 예시를 살펴 보자.
 
@@ -178,13 +174,13 @@ def create_menu(): # request가 JSON이라고 가정
 
 만약 우리가 제공하지않은 자원에 접속하려 한다면 다음과 같이 404에러를 출력합니다.
 
-![image-20210510201009034](https://tva1.sinaimg.cn/large/008i3skNgy1gqdjjx5tdgj30mk07q759.jpg)
+![image-20210510201009034](https://tva1.sinaimg.cn/large/008i3skNgy1gqdjvwg91dj30mk07q0tg.jpg)
 
 
 
 
 
-### 자원 저장하기 
+### 자원 저장하기
 
 Save 버튼을 눌러 다음과 같이 저장 해놓으면 다양한 테스트를 할 때 유용하게 사용 할 수 있습니다.
 
