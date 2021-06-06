@@ -1,0 +1,176 @@
+## 확률 변수
+
+확률 변수 $X$는 표본의 집합 $S$의 원소 $e$를 실수값 $X(e) = x$에 대응시키는 함수 이다.
+
+- 대문자 $X, Y, \ldots$ : 확률변수
+- 소문자 $x, y, \dots$ : 확률변수가 가질 수 있는 값
+- 확률 P는 집합 S의 부분집합을 실수값에 대응 시키는 함수
+
+$$
+\begin{array}{l}
+P[X=x] \\
+P[X \leq x]
+\end{array}\\
+X=x, X \leq x \text{는 집합 } S \text{의 부분집합을 정의한다. }
+$$
+
+### 예제
+
+예를 들어 주사위 두개를 던진다고 가정해보자. 그렇다면 표본공간 $S$ 는 다음과 같이 구성될 것이다.
+$$
+S = \{H H, H T, T H, T T\}
+\\ \text{H: head T: tail}
+$$
+이 때, 확률변수 $X$를 H(head)가 나온 횟수로 정의 할 수 있다. 이때 각 확률 변수의 값은 다음과 같이 정리 된다. 
+$$
+X(H H)=2, \quad X(H T)=1, \quad X(T H)=1, \quad X(T T)=0
+$$
+이렇게 확률변수는 일종의 하나의 함수의 역할 즉, 어떠한 조건의 실수를 매핑 해주는 역활을 한다. 이 때 임의의 확률을 계산 한다고 가정해보자. $P[X=1]$ 의 확률은 어떻게 될까? 또는 확률변수가 1보다 작은 경우 H가 1개 이하만 나올 확률을 구하면 다음과 같다.
+$$
+P[x=1]=P[\{H T, T H\}]=\frac{2}{4}=\frac{1}{2}\\
+P[x \leqslant 1]=P\{H T, T H, T N\}=\frac{3}{4}
+$$
+<br>
+
+## 연속확률변수(Continous Random Variable)
+
+### 누적분포함수(Cumulative Distribution Function)
+
+누적 분포 함수란 확률변수 $X$가 임의의 범위 안에 있을 확률을 나타낼 때 사용한다. 주로 대문자 $F$ 를사용해서 이를 표현한다. 
+$$
+F(x)=P[X \in(-\infty, x)]
+$$
+<br>
+
+### 확률밀도함수(Probability Density Function)
+
+> 누적분포함수 $F(X)$를 가진 확률변수 $X$에 대해서 다음을 만족하는 함수 $f(x)$가 존재한다면 $X$를 연속확률변수라고 부르고 $f(x)$를 $X$의 **확률밀도함수**(probabilty density funciton, pdf)라고 부른다.
+> $$
+> F(x)=\int_{-\infty}^{x} f(t) \mathrm{d} t
+> $$
+
+- 확률변수를 명확하기 위해 $F_{X}(x), f_{X}(x)$로 쓰기도 한다. (확률변수: $X, Y$등 사용가능)
+- 혼란이 없을 경우 $f_{X}(x)$ 대신 $p_{X}(x), p_{x}(x), p(x)$를 사용하기도 한다.
+- $p(x) \geq 0, \int_{-\infty}^{\infty} p(x)=1$
+
+
+
+<br>
+
+## 확률변수의 성질(The Rules of Probabilty)
+
+### 덧셈법칙 (sum rule)
+
+여기서 표현되는 $p$는 전부 확률밀도함수를 가르킨다. 다음 수식에서 확률변수가 $X, Y$ 두 개 존재하는 것을 유심히 살펴보자. 다음과 같이 $X, Y$가 결합 되었을때 결합분포(Joint Probabilty)라고 한다. 이렇게 두가지가 주어졌는데 $X$에 대해 확률을 구하고, $Y$에 대해 확률을 따로 따로 구해 그 값을 더한 것을 주변화(Marginalize)라고 한다.
+$$
+p(X)=\sum_{Y} p(X, Y)=
+$$
+<br>
+
+### 곱셈법칙
+
+$$
+p(X, Y)=p(X \mid Y) p(Y)=p(Y \mid X) p(X)
+$$
+
+
+
+<br>
+
+### 베이즈 확률
+
+일반적으로 $X$가 주어지고 $Y$를 구하는 형태가 아니라 $Y$를 통해 $X$를 구하는 형태가 더 쉬울 경우 사용하는 방법론이다. 즉, 사후확율을 구하기 위해서 사전확률을 이용하는 방법이다.
+$$
+\begin{aligned}
+p(Y \mid X) &=\frac{p(X \mid Y) p(Y)}{\sum_{Y} p(X \mid Y) p(Y)} \\
+\text { posterior } &=\frac{\text { likelihood } \times \text { prior }}{\text { normalization }}
+\end{aligned}
+$$
+
+- posterior: 사후확률
+- likehood: 우도
+- prior: 사전 확률
+- normaliztion: $Y$와 상관없는 상수, $X$의 경계확률(marginal) $p(X)$
+
+<br>
+
+### 예제
+
+#### 주변확률(Marginal)분포, 조건부(conditional) 확률분포
+
+다음 그림과 같이 데이터가 분포되어 있을때 주변확률 분포인 $p(Y)$ 와 $p(X)$를 구할 수 있고 또한 조건부 확률 분포도 다음과 같이 구할 수 있다.
+
+![image-20210602224528162](https://i.loli.net/2021/06/02/Ft8yRsC6dDBWNST.png)
+
+<br>
+
+## 확률변수의 함수(Functions of Random Variable)
+
+확률변수 $X$의 함수 $Y=f(X)$도 확률변수이다. (즉, 함수의 함수) 예를 들어, 확률변수 $X$가 주(week)의 수로 표현되었다고 할 때, 일(Day)의 수로 표현된 새로운 확률변수를 정의할 수 있다.
+$$
+\begin{array}{c}
+Y=7 X \\
+P[14 \leq Y \leq 21]=P[2 \leq X \leq 3]
+\end{array}
+$$
+확률변수 $X$의 함수 $Y=g(X)$와 역함수 $w(Y)=X$가 주어졌을 때 다음이 성립한다. 즉 확률변수 $X$에 대한 확률밀도함수를 $y$에 대해 미분을 하게되면 $y$에 대한 확률밀도함수를 구할 수 있게 된다.
+$$
+p_{y}(y)=p_{x}(x)\left|\frac{\mathrm{d} x}{\mathrm{~d} y}\right|
+$$
+
+### 일반화
+
+$\begin{array}{l}
+k \text { 차원의 확률변수 벡터 } \mathbf{x}=\left(x_{1}, \ldots, x_{k}\right) \text { 가 주어졌을 때, } k \text { 개의 } \mathbf{x} \text { 에 관한 함수들 } y_{i}=g_{i}(\mathbf{x}) \text { for }\\
+i=1, \ldots, k \text { 는 새로운 확률변수벡터 } \mathbf{y}=\left(y_{1}, \ldots, y_{k}\right) \text { 를 정의한다. 간략하게 } \mathbf{y}=\mathbf{g}(\mathbf{x}) \text { 로 나타낼 수 있다. }
+\end{array}$ 
+
+예를 들어, 확률 변수가 $x_1, x_2,\dots, x_k$ 와 $y_1, y_2, \dots, y_k$ 로 주어졌다고 가정해 보자. 이때, $y_1 = g_1(\bold{x})$ 의 관계 성립한다고 가정한다. (여기서 볼드체 $\bold{x}$ 는  $x$ 벡터들의 집합을 나타냄) 즉, $y_1 = g_1(x_1, x_2, \dots, x_k)$ 을 나타낸다. 이러한 $y$의 확률 집합들의 확률밀도함수가 궁금한 것이다. 
+
+이것을 구하기 위해서는 $x$의 확률밀도함수 즉, $p_x(x_1,x_2, \dots, x_k)$ 에 $|\mathbf{J}|$를 곱해 $y$의 결합확률밀도함수를 구할 수 있게 된다.
+
+
+
+만약 $\mathbf{y}=\mathbf{g}(\mathbf{x})$ 가 일대일(one-to-one)변환인 경우 $(\mathbf{x}=\mathbf{w}(\mathbf{y})$ 로 유일한 해를 가질 때), $\mathbf{y}$ 의 결합확률밀도함수 (joint pdf)는 다음과 같이 나타낼 수 있다.
+$$
+\begin{array}{l}
+p_{\mathbf{y}}\left(y_{1}, \ldots, y_{k}\right)=p_{\mathbf{x}}\left(x_{1}, \ldots, x_{k}\right)|\mathbf{J}| \\
+\mathbf{J}=\left|\begin{array}{ccc}
+\frac{\partial x_{1}}{\partial y_{1}} & \frac{\partial x_{1}}{\partial y_{2}} & \cdots & \frac{\partial x_{1}}{\partial y_{k}} \\
+\frac{\partial x_{2}}{\partial y_{1}} & \cdots & \vdots \\
+\vdots & & \\
+\frac{\partial x_{k}}{\partial y_{1}} & \cdots & \frac{\partial x_{k}}{\partial y_{k}}
+\end{array}\right|
+\end{array}
+$$
+ <br>
+
+### 예제
+
+$p_{x_{1}, x_{2}}\left(x_{1}, x_{2}\right)=e^{-\left(x_{1}+x_{2}\right)}, x_{1}>0, x_{2}>0$ 이라고 하자. $y_{1}=x_{1}, y_{2}=x_{1}+x_{2}$ 에 의해서 정의되는 $y$의 pdf는?
+$$
+J=\left|\begin{array}{cc}
+\frac{\partial x_{1}}{\partial y_{i}} & \frac{\partial x_{1}}{\partial y_{2}} \\
+\frac{\partial x_{2}}{\partial y_{1}} & \frac{\partial x_{2}}{\partial y_{2}}
+\end{array}\right|=\left|\begin{array}{cc}
+1 & 0 \\
+-1 & 1
+\end{array}\right|=1
+$$
+
+
+### Inverse CDF Technique
+
+확률변수 $X$가 CDF $F_X(X)$를 가진다고 하자. 연속확률분포함수 $U \sim \operatorname{UNIF}(0,1)$ 의 함수로 정의도는 다음 확률변수 $Y$를 생각해보자. 
+$$
+Y=F_{X}^{-1}(U)
+$$
+확률변수 $Y$는 확률변수 $X$와 동일한 분포를 따르게 된다.
+$$
+\begin{aligned}
+F_{Y}(y) &=P[Y \leq y] \\
+&=P\left[F_{X}^{-1}(U) \leq y\right] \\
+&=P\left[U \leq F_{X}(y)\right] \\
+&=F_{X}(y)
+\end{aligned}
+$$
